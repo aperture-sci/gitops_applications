@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: globex
+  name: globex
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+        - name: globex
+          image: lrochette/globex:1.7.18
