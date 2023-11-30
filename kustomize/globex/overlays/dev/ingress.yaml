@@ -10,7 +10,7 @@ spec:
     - host: globex-dev.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: (/|$)(.*)
+          - path: /(/|$)(.*)
             backend:
               service:
                 name: globex
