@@ -12,7 +12,7 @@ spec:
     - host: globex-dev.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: /
+          - path: /color
             backend:
               service:
                 name: globex
