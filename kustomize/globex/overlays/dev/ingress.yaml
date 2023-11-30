@@ -3,14 +3,14 @@ kind: Ingress
 metadata:
   name: globex-dev
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /globex/$1
+    nginx.ingress.kubernetes.io/rewrite-target: /globex
 spec:
   ingressClassName: nginx
   rules:
     - host: globex-dev.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: /(.*)
+          - path: /
             backend:
               service:
                 name: globex
