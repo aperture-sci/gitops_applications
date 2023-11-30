@@ -3,17 +3,18 @@ kind: Ingress
 metadata:
   name: globex
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /globex/$2
+  kubernetes.io/ingress.class: nginx
+  ingress.kubernetes.io/app-root: /
 spec:
   ingressClassName: nginx
   rules:
-    - host: kubecon.sales-dev.codefresh.io
+    - host: globex-prod.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: /globex-prod(/|$)(.*)
+          - path: /
             backend:
               service:
                 name: globex
                 port:
                   number: 80
-            pathType: ImplementationSpecific
+            pathType: Prefix
