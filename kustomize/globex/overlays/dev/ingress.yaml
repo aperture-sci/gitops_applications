@@ -5,14 +5,14 @@ metadata:
   annotations:
     ingress.kubernetes.io/proxy-body-size: 100M
     kubernetes.io/ingress.class: nginx
-    ingress.kubernetes.io/app-root: /
+    ingress.kubernetes.io/app-root: /$1
 spec:
   ingressClassName: nginx
   rules:
     - host: globex-dev.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: /color
+          - path: '(/.*)'
             backend:
               service:
                 name: globex
