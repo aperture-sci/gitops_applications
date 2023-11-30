@@ -1,10 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: globex
-  annotations:
-  kubernetes.io/ingress.class: nginx
-  ingress.kubernetes.io/app-root: /
+  name: globex-prod
+
 spec:
   ingressClassName: nginx
   rules:
