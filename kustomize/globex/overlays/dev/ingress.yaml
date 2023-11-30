@@ -2,15 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: globex-dev
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /globex
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: /globex
 spec:
   ingressClassName: nginx
   rules:
     - host: globex-dev.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: /
+          - path: /globex
             backend:
               service:
                 name: globex
