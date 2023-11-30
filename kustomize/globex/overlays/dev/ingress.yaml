@@ -7,7 +7,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: kubecon.sales-dev.codefresh.io
+    - host: tunnels.cf-cd.com
+    # - host: kubecon.sales-dev.codefresh.io
       http:
         paths:
           - path: /globex-dev(/|$)(.*)
