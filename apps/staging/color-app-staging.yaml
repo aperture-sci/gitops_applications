@@ -9,7 +9,7 @@ metadata:
     codefresh.io/product: color-app
 spec:
   destination:
-    name: 'in-cluster'  # 'kc-v-staging'
+    name: 'kc-v-staging'
     namespace: staging
   source:
     path: manifests/color/aperture-staging

@@ -9,7 +9,7 @@ metadata:
     codefresh.io/product: color-app
 spec:
   destination:
-    name: 'in-cluster'  # 'kc-v-qa'
+    name: 'kc-v-qa'
     namespace: qa
   source:
     path: manifests/color/aperture-qa

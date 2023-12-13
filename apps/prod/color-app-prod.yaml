@@ -9,7 +9,7 @@ metadata:
     codefresh.io/product: color-app
 spec:
   destination:
-    name: 'in-cluster'  # 'kc-v-prod'
+    name: 'kc-v-prod'
     namespace: prod
   source:
     path: manifests/color/aperture-prod
