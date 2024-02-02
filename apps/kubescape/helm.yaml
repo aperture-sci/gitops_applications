@@ -14,9 +14,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   sources:
-  - path: ./examples/helm_chart
-    repoURL: https://github.com/kubescape/kubescape
-    targetRevision: master
+  - chart: kubescape/kubescape-operator
+    repoURL: https://kubescape.github.io/helm-charts
+    targetRevision: 1.18.1
     helm:
       valueFiles:
         - $values/helm/kubescape/values.yaml
