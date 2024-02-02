@@ -14,7 +14,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   sources:
-  - chart: kubescape/kubescape-operator
+  - chart: kubescape-operator
     repoURL: https://kubescape.github.io/helm-charts
     targetRevision: 1.18.1
     helm:
