@@ -16,7 +16,7 @@ spec:
   sources:
   - path: ./examples/helm_chart
     repoURL: https://github.com/kubescape/kubescape
-    targetRevision: main
+    targetRevision: master
     helm:
       valueFiles:
         - $values/helm/kubescape/values.yaml
