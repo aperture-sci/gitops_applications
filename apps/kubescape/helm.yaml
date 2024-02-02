@@ -13,13 +13,16 @@ spec:
     namespace: kubescape
     server: https://kubernetes.default.svc
   project: default
-  source:
-    path: ./examples/helm_chart
+  sources:
+  - path: ./examples/helm_chart
     repoURL: https://github.com/kubescape/kubescape
     targetRevision: main
     helm:
       valueFiles:
-        - ./helm/kubescape/values.yaml
+        - $values/helm/kubescape/values.yaml
+  - repoUrl: https://github.com/aperture-sci/gitops_applications
+    targetRevision: main
+    ref: values
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
