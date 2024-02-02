@@ -42,7 +42,7 @@ configMap:
   create: false
   params:
     customerGUID: b3886c0a-92dc-4f84-ab00-e062c4e1222d
-    clusterName: lr1
+    clusterName: kcdev
 
 podAnnotations: {}
 
