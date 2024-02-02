@@ -18,6 +18,7 @@ spec:
     repoURL: https://kubescape.github.io/helm-charts
     targetRevision: 1.18.1
     helm:
+      releaseName: kubescape
       valueFiles:
         - $values/helm/kubescape/values.yaml
   - repoURL: https://github.com/aperture-sci/gitops_applications
