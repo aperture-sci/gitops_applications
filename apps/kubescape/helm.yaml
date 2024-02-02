@@ -17,6 +17,9 @@ spec:
     path: ./examples/helm_chart
     repoURL: https://github.com/kubescape/kubescape
     targetRevision: main
+    helm:
+      valueFiles:
+        - ./helm/kubescape/values.yaml
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
