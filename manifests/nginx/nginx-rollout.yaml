@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx-privileged
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+        securityContext:
+          allowPrivilegeEscalation: true
+  strategy:
+    canary:
+      stableService: nginx-ro
+      canaryService: nginx-preview
+      steps:
+      - setWeight: 50
+      - pause: {}
+      - analysis:
+          templates:
+          - templateName: scan
+      - setWeight: 80
+      - pause: {duration: 10s}          
