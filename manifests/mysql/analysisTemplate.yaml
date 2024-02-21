@@ -16,20 +16,20 @@ spec:
                 command: [bash, -c]
                 args: [kubescape scan]
                 env:
-                - name: VERBOSE
-                  value: on
-                - name: FRAMEWORKS
-                  value: MITRE
-                - name: ACCOUNT
-                  valueFrom:
-                    secretKeyRef:
-                      name:  armo-secret
-                      key: account
-                - name: ACCESS_KEY
-                  valueFrom:
-                    secretKeyRef:
-                      name:  armo-secret
-                      key: access-key
+                  - name: VERBOSE
+                    value: "on"
+                  - name: FRAMEWORKS
+                    value: MITRE
+                  - name: ACCOUNT
+                    valueFrom:
+                      secretKeyRef:
+                        name:  armo-secret
+                        key: account
+                  - name: ACCESS_KEY
+                    valueFrom:
+                      secretKeyRef:
+                        name:  armo-secret
+                        key: access-key
 
               restartPolicy: Never
           backoffLimit: 1
