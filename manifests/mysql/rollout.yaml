@@ -22,7 +22,7 @@ spec:
           value: your_password_here
   strategy:
     canary:
-      stableService: mysql-active
+      stableService: mysql
       canaryService: mysql-preview
       steps:
       - setWeight: 50
@@ -31,4 +31,4 @@ spec:
           templates:
           - templateName: scan
       - setWeight: 80
-      - pause: {duration: 10s}      
+      - pause: {duration: 10s}
