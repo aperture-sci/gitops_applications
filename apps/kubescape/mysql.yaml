@@ -9,7 +9,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: nmysql-ks
+    namespace: mysql
   source:
     path: manifests/mysql
     repoURL: 'https://github.com/aperture-sci/gitops_applications'
