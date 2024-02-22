@@ -26,7 +26,7 @@ spec:
       stableService: mysql
       canaryService: mysql-preview
       steps:
-      - setWeight: 50
+      - setWeight: 30
       - pause: {}
       - analysis:
           templates:
