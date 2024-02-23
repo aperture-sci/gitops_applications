@@ -10,11 +10,25 @@ spec:
         spec:
           template:
             spec:
+              serviceAccountName: kubescape-scan
+              initContainers:
+              - name: kubectl
+                image: docker.io/bitnami/kubectl:latest
+                command: ["/bin/sh", "-c"]
+                args:
+                - kubectl get deploy -n default nginx -o yaml > /data/workload.yaml
+                volumeMounts:
+                - name: shared-data
+                  mountPath: /data
               containers:
               - name: kubescape
-                image: quay.io/kubescape/kubescape-cli:v3.0.1
-                command: [bash, -c]
-                args: [kubescape scan]
+                image: quay.io/matthiasb_1/kubescape:latest
+                command: ["/busybox/sh", -c]
+                args:
+                - kubescape scan --severity-threshold low /data/workload.yaml
+                volumeMounts:
+                - name: shared-data
+                  mountPath: /data
                 env:
                   - name: VERBOSE
                     value: "on"
@@ -32,4 +46,7 @@ spec:
                   #       key: access-key
 
               restartPolicy: Never
+              volumes:
+              - name: shared-data
+                emptyDir: {}
           backoffLimit: 1
