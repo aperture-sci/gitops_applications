@@ -4,7 +4,7 @@ metadata:
   name: rollout-scan
 spec:
   metrics:
-  - name: scan
+  - name: rollout-scan
     provider:
       job:
         spec:
