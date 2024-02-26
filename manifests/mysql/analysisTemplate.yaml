@@ -1,7 +1,7 @@
 kind: AnalysisTemplate
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: scan
+  name: rollout-scan
 spec:
   metrics:
   - name: scan

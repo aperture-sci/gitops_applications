@@ -30,6 +30,6 @@ spec:
       - pause: {}
       - analysis:
           templates:
-          - templateName: scan
+          - templateName: rollout-scan
       - setWeight: 80
       - pause: {duration: 10s}
