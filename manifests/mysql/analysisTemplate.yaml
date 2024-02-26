@@ -1,10 +1,10 @@
 kind: AnalysisTemplate
 apiVersion: argoproj.io/v1alpha1
 metadata:
-  name: rollout-scan
+  name: mysql-scan
 spec:
   metrics:
-  - name: rollout-scan
+  - name: mysql-scan
     provider:
       job:
         spec:

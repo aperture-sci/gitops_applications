@@ -30,6 +30,6 @@ spec:
       - pause: {duration: 10s}
       - analysis:
           templates:
-          - templateName: rollout-scan
+          - templateName: mysql-scan
       - setWeight: 80
       - pause: {duration: 10s}
