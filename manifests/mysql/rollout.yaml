@@ -4,7 +4,7 @@ metadata:
   name: mysql-rollout
 spec:
   replicas: 4
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: mysql
