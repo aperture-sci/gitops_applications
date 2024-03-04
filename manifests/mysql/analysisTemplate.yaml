@@ -11,24 +11,28 @@ spec:
           template:
             spec:
               serviceAccountName: kubescape-scan
-              initContainers:
-              - name: kubectl
-                image: docker.io/bitnami/kubectl:latest
-                command: ["/bin/sh", "-c"]
-                args:
-                - kubectl get deploy -n default mysql -o yaml > /data/workload.yaml
-                volumeMounts:
-                - name: shared-data
-                  mountPath: /data
+              # initContainers:
+              # - name: kubectl
+              #   image: docker.io/bitnami/kubectl:latest
+              #   command: ["/bin/sh", "-c"]
+              #   args:
+              #   - kubectl get deploy -n default mysql -o yaml > /data/workload.yaml
+              #   volumeMounts:
+              #   - name: shared-data
+              #     mountPath: /data
               containers:
               - name: kubescape
-                image: quay.io/matthiasb_1/kubescape:latest
-                command: ["/busybox/sh", -c]
-                args:
-                - kubescape scan --severity-threshold low /data/workload.yaml
-                volumeMounts:
-                - name: shared-data
-                  mountPath: /data
+                image: quay.io/kubescape/kubescape-cli:v3.0.4
+                command: ["kubescape"]
+                args: 
+                  - scan
+                  - workload
+                  - --severity-threshold=low
+                  - --namespace=default
+                  - deployment/nginx
+                # volumeMounts:
+                # - name: shared-data
+                #   mountPath: /data
                 env:
                   - name: VERBOSE
                     value: "on"
