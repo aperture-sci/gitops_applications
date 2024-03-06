@@ -29,7 +29,7 @@ spec:
                   - workload
                   - --severity-threshold=low
                   - --namespace=mysql
-                  - rollout/mysql-rollout
+                  - Rollout/mysql-rollout
                 # volumeMounts:
                 # - name: shared-data
                 #   mountPath: /data
