@@ -24,12 +24,12 @@ spec:
               - name: kubescape
                 image: quay.io/kubescape/kubescape-cli:v3.0.4
                 command: ["kubescape"]
-                args: 
+                args:
                   - scan
                   - workload
                   - --severity-threshold=low
-                  - --namespace=default
-                  - deployment/nginx
+                  - --namespace=mysql
+                  - rollout/mysql-rollout
                 # volumeMounts:
                 # - name: shared-data
                 #   mountPath: /data
@@ -50,7 +50,7 @@ spec:
                   #       key: access-key
 
               restartPolicy: Never
-              volumes:
-              - name: shared-data
-                emptyDir: {}
+              # volumes:
+              # - name: shared-data
+              #   emptyDir: {}
           backoffLimit: 1
