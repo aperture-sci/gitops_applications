@@ -23,13 +23,12 @@ spec:
               containers:
               - name: kubescape
                 image: quay.io/kubescape/kubescape-cli:v3.0.4
-                command: ["kubescape"]
+                command: ["bash"]
                 args:
-                  - scan
-                  - workload
-                  - --severity-threshold=low
-                  - --namespace=mysql
-                  - Rollout/mysql-rollout
+                  - |
+                    kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
+                    echo "Exit code $?"
+                    
                 # volumeMounts:
                 # - name: shared-data
                 #   mountPath: /data
