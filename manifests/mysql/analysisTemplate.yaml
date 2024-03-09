@@ -23,8 +23,8 @@ spec:
               containers:
               - name: kubescape
                 image: quay.io/kubescape/kubescape-cli:v3.0.4
-                command: ["sh"]
-                args:
+                commands:  # ["sh"]
+  #               args:
                   - |
                     ps
                     ls /bin/*sh || true
