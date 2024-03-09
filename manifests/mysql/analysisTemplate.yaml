@@ -26,12 +26,12 @@ spec:
                 command: ["sh"]
                 args:
                   - |
-                    ls /bin/*sh
-                    ls /usr/local/bin*sh || true
+                    ps
+                    ls /bin/*sh || true
+                    ls /usr/local/bin/*sh || true
                     find / -name bash || true
                     kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
                     echo "Exit code $?"
-
                 # volumeMounts:
                 # - name: shared-data
                 #   mountPath: /data
