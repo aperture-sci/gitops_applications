@@ -11,48 +11,43 @@ spec:
           template:
             spec:
               serviceAccountName: kubescape-scan
-              # initContainers:
-              # - name: kubectl
-              #   image: docker.io/bitnami/kubectl:latest
-              #   command: ["/bin/sh", "-c"]
-              #   args:
-              #   - kubectl get deploy -n default mysql -o yaml > /data/workload.yaml
-              #   volumeMounts:
-              #   - name: shared-data
-              #     mountPath: /data
               containers:
               - name: kubescape
-                image: quay.io/kubescape/kubescape-cli:v3.0.4
-                commands:  # ["sh"]
-  #               args:
-                  - |
+  #               image: quay.io/kubescape/kubescape-cli:v3.0.4
+  #               commands:  # ["sh"]
+  # #               args:
+  #                 - |
+  #                   ps
+  #                   ls /bin/*sh || true
+  #                   ls /usr/local/bin/*sh || true
+  #                   find / -name bash || true
+  #                   kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
+  #                   echo "Exit code $?"
+                script:
+                  image: quay.io/kubescape/kubescape-cli:v3.0.4
+                  command: [ sh ]
+                  source: |
                     ps
                     ls /bin/*sh || true
                     ls /usr/local/bin/*sh || true
                     find / -name bash || true
                     kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
                     echo "Exit code $?"
-                # volumeMounts:
-                # - name: shared-data
-                #   mountPath: /data
-                env:
-                  - name: VERBOSE
-                    value: "on"
-                  - name: FRAMEWORKS
-                    value: MITRE
-                  # - name: ACCOUNT
-                  #   valueFrom:
-                  #     secretKeyRef:
-                  #       name:  armo-secret
-                  #       key: account
-                  # - name: ACCESS_KEY
-                  #   valueFrom:
-                  #     secretKeyRef:
-                  #       name:  armo-secret
-                  #       key: access-key
+                  env:
+                    - name: VERBOSE
+                      value: "on"
+                    - name: FRAMEWORKS
+                      value: MITRE
+                # - name: ACCOUNT
+                #   valueFrom:
+                #     secretKeyRef:
+                #       name:  armo-secret
+                #       key: account
+                # - name: ACCESS_KEY
+                #   valueFrom:
+                #     secretKeyRef:
+                #       name:  armo-secret
+                #       key: access-key
 
               restartPolicy: Never
-              # volumes:
-              # - name: shared-data
-              #   emptyDir: {}
           backoffLimit: 1
