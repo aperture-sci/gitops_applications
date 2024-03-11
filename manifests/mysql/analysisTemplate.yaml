@@ -19,13 +19,17 @@ spec:
                   image: quay.io/kubescape/kubescape-cli:v3.0.4
                     # alpine:3.19.1
                     # quay.io/kubescape/kubescape-cli:v3.0.4
-                  command:   ["kubescape"]
+                  command: ["kubescape"]
                     # ["sh", "-c"]
                   args:
-                    - >-
-                      kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
-
-                    # echo "kubescape is running";
+                    - scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
+                  env:
+                    - name: VERBOSE
+                      value: "on"
+                    - name: FRAMEWORKS
+                      value: MITRE
+                    # - >-
+                    #vecho "kubescape is running";
                     # exitcode=$? ;
                     # echo $exitcode ;
                     # echo "end" ;
