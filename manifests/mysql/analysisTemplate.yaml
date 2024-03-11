@@ -15,29 +15,30 @@ spec:
             spec:
               serviceAccountName: kubescape-scan
               containers:
-                - name: kubescape
-                  image: quay.io/kubescape/kubescape-cli:v3.0.4
-                    # alpine:3.19.1
-                    # quay.io/kubescape/kubescape-cli:v3.0.4
-                  command: ["kubescape"]
-                    # ["sh", "-c"]
+                # - name: kubescape
+                #   image: quay.io/kubescape/kubescape-cli:v3.0.4
+                  # command: ["kubescape"]
+                  # args:
+                  # - scan
+                  # - workload
+                  # - --severity-threshold=low
+                  # - --namespace=mysql
+                  # - Rollout/mysql-rollout
+                  # env:
+                  #   - name: VERBOSE
+                  #     value: "on"
+                  #   - name: FRAMEWORKS
+                  #     value: MITRE
+                - name: shell
+                  image: alpine:3.19.1
+                  command: ["sh", "-c"]
                   args:
-                  - scan
-                  - workload
-                  - --severity-threshold=low
-                  - --namespace=mysql
-                  - Rollout/mysql-rollout
-                  env:
-                    - name: VERBOSE
-                      value: "on"
-                    - name: FRAMEWORKS
-                      value: MITRE
-                    # - >-
-                    #vecho "kubescape is running";
-                    # exitcode=$? ;
-                    # echo $exitcode ;
-                    # echo "end" ;
-                    # exit $exitcode
+                    - >-
+                      echo "kubescape is running";
+                      exitcode=$? ;
+                      echo $exitcode ;
+                      echo "end" ;
+                      exit $exitcode
 
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
