@@ -17,10 +17,11 @@ spec:
                     #quay.io/kubescape/kubescape-cli:v3.0.4
                   command:   ["sh", "-c"]
                   args:
-                    - echo "kubescape is running";
-                    - kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout ;
-                    - echo "end" ;
-                    - echo || false
+                    - >-
+                      echo "kubescape is running";
+                      kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout ;
+                      echo "end" ;
+                      echo || false
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
               #   command: [ sh ]
