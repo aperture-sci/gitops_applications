@@ -18,7 +18,7 @@ spec:
                   command:   ["sh", "-c"]
                   args:
                     - echo "kubescape is running";
-                    - false
+                    - "false"
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
               #   command: [ sh ]
