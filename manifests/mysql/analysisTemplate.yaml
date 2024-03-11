@@ -8,6 +8,9 @@ spec:
     provider:
       job:
         spec:
+          successfulJobsHistoryLimit: 1
+          failedJobsHistoryLimit: 1
+          ttlSecondsAfterFinished: 86400
           template:
             spec:
               serviceAccountName: kubescape-scan
