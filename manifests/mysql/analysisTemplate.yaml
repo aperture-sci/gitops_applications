@@ -11,8 +11,8 @@ spec:
           template:
             spec:
               serviceAccountName: kubescape-scan
-              containers:
-              - name: kubescape
+              # containers:
+              # - name: kubescape
   #               image: quay.io/kubescape/kubescape-cli:v3.0.4
   #               commands:  # ["sh"]
   # #               args:
@@ -23,21 +23,21 @@ spec:
   #                   find / -name bash || true
   #                   kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
   #                   echo "Exit code $?"
-                script:
-                  image: quay.io/kubescape/kubescape-cli:v3.0.4
-                  command: [ sh ]
-                  source: |
-                    ps
-                    ls /bin/*sh || true
-                    ls /usr/local/bin/*sh || true
-                    find / -name bash || true
-                    kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
-                    echo "Exit code $?"
-                  env:
-                    - name: VERBOSE
-                      value: "on"
-                    - name: FRAMEWORKS
-                      value: MITRE
+              script:
+                image: quay.io/kubescape/kubescape-cli:v3.0.4
+                command: [ sh ]
+                source: |
+                  ps
+                  ls /bin/*sh || true
+                  ls /usr/local/bin/*sh || true
+                  find / -name bash || true
+                  kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
+                  echo "Exit code $?"
+                env:
+                  - name: VERBOSE
+                    value: "on"
+                  - name: FRAMEWORKS
+                    value: MITRE
                 # - name: ACCOUNT
                 #   valueFrom:
                 #     secretKeyRef:
