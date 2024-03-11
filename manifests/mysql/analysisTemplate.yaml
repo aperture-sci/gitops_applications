@@ -22,7 +22,11 @@ spec:
                   command: ["kubescape"]
                     # ["sh", "-c"]
                   args:
-                    - scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
+                  - scan
+                  - workload
+                  - --severity-threshold=low
+                  - --namespace=mysql
+                  - Rollout/mysql-rollout
                   env:
                     - name: VERBOSE
                       value: "on"
