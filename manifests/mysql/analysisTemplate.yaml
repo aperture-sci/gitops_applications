@@ -14,9 +14,9 @@ spec:
               containers:
               - name: kubescape
                 image: quay.io/kubescape/kubescape-cli:v3.0.4
-                commands:  # ["sh -c"]
-                 args:
-                  - false
+                command:   ["sh -c false"]
+                 # args:
+                 #  - false
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
               #   command: [ sh ]
