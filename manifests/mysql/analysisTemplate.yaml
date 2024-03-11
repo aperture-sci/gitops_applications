@@ -33,7 +33,7 @@ spec:
                   image: alpine:3.19.1
                   command: ["sh", "-c"]
                   args:
-                    - >-
+                    - >
                       echo "kubescape is running";
                       exitcode=$? ;
                       echo $exitcode ;
