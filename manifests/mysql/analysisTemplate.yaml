@@ -15,9 +15,10 @@ spec:
                 - name: kubescape
                   image: alpine:3.19.1
                     #quay.io/kubescape/kubescape-cli:v3.0.4
-                  command:   ["sh -c echo kubescape is running ; false"]
-                 # args:
-                 #  - false
+                  command:   ["sh", "-c"]
+                  args:
+                    - echo "kubescape is running";
+                    - false
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
               #   command: [ sh ]
