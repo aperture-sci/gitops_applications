@@ -34,7 +34,7 @@ spec:
                   command: ["sh", "-c"]
                   args:
                     - >
-                      echo "kubescape is running" || false ;
+                      echo "kubescape is running - false" && false ;
                       exitcode=$? ;
                       echo $exitcode ;
                       echo "end" ;
