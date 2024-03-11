@@ -22,7 +22,7 @@ spec:
                       echo "kubescape is running";
                       kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout ;
                       exitcode=$? ;
-                      echo $exitcode
+                      echo $exitcode ;
                       echo "end" ;
                       exit $exitcode
 
