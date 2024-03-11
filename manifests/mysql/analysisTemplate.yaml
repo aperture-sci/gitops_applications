@@ -23,12 +23,13 @@ spec:
                     # ["sh", "-c"]
                   args:
                     - >-
-                      scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
-                      # echo "kubescape is running";
-                      # exitcode=$? ;
-                      # echo $exitcode ;
-                      # echo "end" ;
-                      # exit $exitcode
+                      kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout
+
+                    # echo "kubescape is running";
+                    # exitcode=$? ;
+                    # echo $exitcode ;
+                    # echo "end" ;
+                    # exit $exitcode
 
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
