@@ -12,10 +12,10 @@ spec:
             spec:
               serviceAccountName: kubescape-scan
               containers:
-              - name: kubescape
-                image: alpine:latest
-                  #quay.io/kubescape/kubescape-cli:v3.0.4
-                command:   ["sh", "-c", "false"]
+                - name: kubescape
+                  image: alpine:3.19.1
+                    #quay.io/kubescape/kubescape-cli:v3.0.4
+                  command:   ["sh -c false"]
                  # args:
                  #  - false
               # script:
