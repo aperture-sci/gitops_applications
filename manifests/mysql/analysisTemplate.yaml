@@ -30,8 +30,9 @@ spec:
                   #   - name: FRAMEWORKS
                   #     value: MITRE
                 - name: shell
-                  image: alpine:3.19.1
-                  command: ["sh", "-c"]
+                  image: quay.io/kubescape/kubescape-cli:v3.0.4
+                  # alpine:3.19.1
+                  command: ["/busybox/sh", "-c"]
                   args:
                     - >
                       echo "kubescape is running - false" && false ;
