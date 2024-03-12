@@ -15,32 +15,32 @@ spec:
             spec:
               serviceAccountName: kubescape-scan
               containers:
-                # - name: kubescape
-                #   image: quay.io/kubescape/kubescape-cli:v3.0.4
-                  # command: ["kubescape"]
-                  # args:
-                  # - scan
-                  # - workload
-                  # - --severity-threshold=low
-                  # - --namespace=mysql
-                  # - Rollout/mysql-rollout
-                  # env:
-                  #   - name: VERBOSE
-                  #     value: "on"
-                  #   - name: FRAMEWORKS
-                  #     value: MITRE
-                - name: shell
+                - name: kubescape
                   image: quay.io/kubescape/kubescape-cli:v3.0.4
-                  # alpine:3.19.1
-                  command: ["/busybox/sh", "-c"]
+                  command: ["kubescape"]
                   args:
-                    - >
-                      echo "kubescape is running ";
-                      kubescape scan  workload --severity-threshold=low --namespace=mysql Deployment/mysql-ref-deployment | tee /tmp/kubescape.log;
-                      exitcode=$? ;
-                      critical=`egrep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
-                      echo "critical $critical";
-                      exit $critical
+                  - scan
+                  - workload
+                  - --severity-threshold=low
+                  - --namespace=mysql
+                  - Deployment/mysql-ref-deployment
+                  env:
+                    - name: VERBOSE
+                      value: "on"
+                    - name: FRAMEWORKS
+                      value: MITRE
+                # - name: shell
+                #   image: quay.io/kubescape/kubescape-cli:v3.0.4
+                #   # alpine:3.19.1
+                #   command: ["/busybox/sh", "-c"]
+                #   args:
+                #     - >
+                #       echo "kubescape is running ";
+                #       kubescape scan  workload --severity-threshold=low --namespace=mysql Deployment/mysql-ref-deployment | tee /tmp/kubescape.log;
+                #       exitcode=$? ;
+                #       critical=`egrep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
+                #       echo "critical $critical";
+                #       exit $critical
               #if [ $critical > 0 ] ; then echo "error" ; exit 1; else echo "OK" ; exit 0 ; fi
 
               # script:
