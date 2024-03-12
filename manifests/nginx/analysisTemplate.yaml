@@ -23,7 +23,7 @@ spec:
                   - workload
                   - --severity-threshold=low
                   - --namespace=mysql
-                  - Rollout/nginx-deployment
+                  - Rollout/nginx
                   env:
                     - name: VERBOSE
                       value: "on"
