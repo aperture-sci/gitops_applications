@@ -38,8 +38,8 @@ spec:
                       echo "kubescape is running ";
                       kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout | tee /tmp/kubescape.log;
                       exitcode=$? ;
-                      critical=`grep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
-                      echo $critical;
+                      critical=`egrep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
+                      echo  critical $critical;
                       exit $critical
               #if [ $critical > 0 ] ; then echo "error" ; exit 1; else echo "OK" ; exit 0 ; fi
 
