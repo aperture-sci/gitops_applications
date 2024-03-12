@@ -36,11 +36,12 @@ spec:
                   args:
                     - >
                       echo "kubescape is running ";
-                      kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout;
+                      kubescape scan  workload --severity-threshold=low --namespace=mysql Rollout/mysql-rollout | tee /tmp/kubescape.log;
                       exitcode=$? ;
-                      echo $exitcode ;
-                      echo "end" ;
-                      exit $exitcode
+                      critical=`grep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
+                      echo $critical;
+                      exit $critical
+              #if [ $critical > 0 ] ; then echo "error" ; exit 1; else echo "OK" ; exit 0 ; fi
 
               # script:
               #   image: quay.io/kubescape/kubescape-cli:v3.0.4
