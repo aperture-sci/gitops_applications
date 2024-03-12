@@ -8,10 +8,10 @@ spec:
   selector:
     matchLabels:
       app: mysql
-    workloadRef:                                 # Reference an existing Deployment using workloadRef field
-      apiVersion: apps/v1
-      kind: Deployment
-      name:  mysql-ref-deployment
+  workloadRef:                                 # Reference an existing Deployment using workloadRef field
+    apiVersion: apps/v1
+    kind: Deployment
+    name:  mysql-ref-deployment
   strategy:
     canary:
       stableService: mysql
