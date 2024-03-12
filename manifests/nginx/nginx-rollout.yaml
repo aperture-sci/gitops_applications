@@ -27,9 +27,8 @@ spec:
       canaryService: nginx-preview
       steps:
       - setWeight: 50
-      - pause: {}
       - analysis:
           templates:
-          - templateName: scan
+          - templateName: nginx-scan
       - setWeight: 80
       - pause: {duration: 10s}
