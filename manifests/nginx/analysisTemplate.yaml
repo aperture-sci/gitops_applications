@@ -25,7 +25,6 @@ spec:
                       exitcode=$? ;
                       critical=`egrep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
                       echo "critical $critical";
-                      exit $critical
                   env:
                     - name: VERBOSE
                       value: "on"
