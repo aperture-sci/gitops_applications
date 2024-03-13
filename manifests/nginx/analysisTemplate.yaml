@@ -22,7 +22,7 @@ spec:
                   - scan
                   - workload
                   - --severity-threshold=low
-                  - --namespace=mysql
+                  - --namespace=nginx-ks
                   - Rollout/nginx
                   env:
                     - name: VERBOSE
