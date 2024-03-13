@@ -17,13 +17,15 @@ spec:
               containers:
                 - name: kubescape
                   image: quay.io/kubescape/kubescape-cli:v3.0.4
-                  command: ["kubescape"]
+                  command: ["/busybox/sh", "-c"]
                   args:
-                  - scan
-                  - workload
-                  - --severity-threshold=low
-                  - --namespace=nginx-ks
-                  - Rollout/nginx
+                    - >
+                      echo "kubescape is running ";
+                      kubescape scan  workload --severity-threshold=low --namespace=nginx-ks Rollout/nginx | tee /tmp/kubescape.log;
+                      exitcode=$? ;
+                      critical=`egrep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
+                      echo "critical $critical";
+                      exit $critical
                   env:
                     - name: VERBOSE
                       value: "on"
