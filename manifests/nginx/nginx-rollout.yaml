@@ -16,7 +16,9 @@ spec:
     spec:
       containers:
       - name: nginx-privileged
-        image: nginx:1.15.2
+        image: cgr.dev/chainguard/nginx:1.15.2
+        # cgr.dev/chainguard/nginx:1.15.2
+        # nginx:1.15.2
         ports:
         - containerPort: 80
         securityContext:
