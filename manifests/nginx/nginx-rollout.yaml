@@ -23,8 +23,8 @@ spec:
           allowPrivilegeEscalation: true
   strategy:
     canary:
-      # stableService: nginx-ro
-      # canaryService: nginx-preview
+      stableService: nginx-ro
+      canaryService: nginx-preview
       steps:
       - setWeight: 50
       - analysis:
