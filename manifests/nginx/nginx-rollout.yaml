@@ -6,24 +6,14 @@ metadata:
     app: nginx
 spec:
   replicas: 4
+  revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx-privileged
-        image: cgr.dev/chainguard/nginx:latest
-        # cgr.dev/chainguard/nginx:latest
-        # nginx:1.25.4
-        # nginx:1.15.2
-        ports:
-        - containerPort: 80
-        securityContext:
-          allowPrivilegeEscalation: true
+  workloadRef:                                 # Reference an existing Deployment using workloadRef field
+    apiVersion: apps/v1
+    kind: Deployment
+    name:  nginx-deployment
   strategy:
     canary:
       stableService: nginx-ro
@@ -33,5 +23,5 @@ spec:
       - analysis:
           templates:
           - templateName: nginx-scan
-      - setWeight: 80
-      - pause: {duration: 10s}
+      - setWeight: 100
+---

@@ -21,10 +21,10 @@ spec:
                   args:
                     - >
                       echo "kubescape is running ";
-                      kubescape scan  workload --severity-threshold=low --namespace=nginx-ks deployment/nginx-deployment | tee /tmp/kubescape.log;
+                      kubescape scan  workload --severity-threshold=low --namespace=nginx-ks Rollout/nginx | tee /tmp/kubescape.log;
                       exitcode=$? ;
                       critical=`egrep '\* \d+ Critical' /tmp/kubescape.log | cut -d' ' -f2`;
-                      #exit 0
+                      exit 0
                       #exit $critical
                   env:
                     - name: VERBOSE
