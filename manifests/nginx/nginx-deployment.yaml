@@ -20,5 +20,5 @@ spec:
         # nginx:1.15.2
         ports:
         - containerPort: 80
-        securityContext:
-          allowPrivilegeEscalation: true
+        # securityContext:
+        #   allowPrivilegeEscalation: true
