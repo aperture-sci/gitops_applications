@@ -21,7 +21,7 @@ spec:
                   args:
                     - >
                       echo "kubescape is running ";
-                      kubescape scan  workload --severity-threshold=low --namespace=nginx-ks deployment/nginx-deployment 
+                      kubescape scan  workload --severity-threshold=high --namespace=nginx-ks deployment/nginx-deployment 
                   env:
                     - name: VERBOSE
                       value: "on"
