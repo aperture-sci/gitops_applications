@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx-privileged
+      - name: cgr.dev/chainguard/nginx:latest
         image: nginx:1.25.4
         # cgr.dev/chainguard/nginx:latest
         # nginx:1.25.4
