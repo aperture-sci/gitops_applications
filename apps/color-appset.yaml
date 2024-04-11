@@ -21,7 +21,7 @@ spec:
       finalizers:
         - resources-finalizer.argocd.argoproj.io/foreground
       annotations:
-        argocd.argoproj.io/manifest-generate-paths: '/manifests/color/aperture-{{short}}'
+        argocd.argoproj.io/manifest-generate-paths: '/manifests/color/{{short}}'
         codefresh.io/product: color-app
       labels:
         codefresh.io/product: color-app
