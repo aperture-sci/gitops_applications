@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: color
-          image: docker.io/aperturesci/rollouts-demo:83a95e2
+          image: docker.io/aperturesci/rollouts-demo:b98d149
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
