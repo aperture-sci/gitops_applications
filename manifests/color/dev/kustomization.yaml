@@ -7,3 +7,6 @@ resources:
 - rollout.yaml
 # - deployment.yaml
 #namespace: staging
+images:
+- name: docker.io/aperturesci/rollouts-demo
+  newTag: d075d36
