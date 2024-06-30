@@ -9,4 +9,4 @@ resources:
 #namespace: prod
 images:
   - name: docker.io/aperturesci/rollouts-demo
-    newTag: aee00c4
+    newTag: 94ea2e4
