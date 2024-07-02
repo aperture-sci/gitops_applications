@@ -9,4 +9,4 @@ resources:
 #namespace: staging
 images:
   - name: docker.io/aperturesci/rollouts-demo
-    newTag: e9e5828
+    newTag: 7d059f0
