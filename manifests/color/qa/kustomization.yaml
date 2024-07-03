@@ -9,4 +9,4 @@ resources:
 #namespace: qa
 images:
   - name: docker.io/aperturesci/rollouts-demo
-    newTag: 7829408
+    newTag: '''c6ddb54'''
