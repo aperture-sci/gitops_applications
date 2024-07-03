@@ -2,11 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base
-  # - ingress.yaml
-  # - ingress-preview.yaml
   - rollout.yaml
-#- deployment.yaml
-#namespace: staging
 images:
   - name: docker.io/aperturesci/rollouts-demo
-    newTag: '013910d'
+    newTag: 00eed34
