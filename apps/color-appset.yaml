@@ -24,8 +24,8 @@ spec:
         argocd.argoproj.io/manifest-generate-paths: '/manifests/color/{{short}}'
         codefresh.io/product: color
         codefresh.io/app-group: color
-      labels:
-        codefresh.io/product: color
+      # labels:
+      #   codefresh.io/product: color
     spec:
       project: default
       source:
