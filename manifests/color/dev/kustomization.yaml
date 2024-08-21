@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - ../base
   - rollout.yaml
+  - ingress.yaml
+  - ingress-preview.yaml
+  - analysis-prometheus.yaml
 images:
   - name: docker.io/aperturesci/rollouts-demo
     newTag: 0587416
