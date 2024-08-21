@@ -27,10 +27,11 @@ spec:
     spec:
       project: default
       source:
-        chart: prometheus-community
+        chart: prometheus-community/prometheus
         repoURL: https://prometheus-community.github.io/helm-charts
-        targetRevision: 25.0
+        targetRevision: 25.26.0
         helm:
+          releaseName: prometheus
           values: |
             alertmanager:
               enabled: false
