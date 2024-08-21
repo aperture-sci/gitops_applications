@@ -21,7 +21,6 @@ spec:
       finalizers:
         - resources-finalizer.argocd.argoproj.io/foreground
       annotations:
-        argocd.argoproj.io/manifest-generate-paths: '/manifests/prometheus/{{short}}'
         codefresh.io/product: prometheus
         codefresh.io/app-group: color
 
@@ -49,9 +48,4 @@ spec:
           prune: true
           selfHeal: true
         syncOptions:
-          - PrunePropagationPolicy=foreground
-          - Replace=false
-          - PruneLast=false
-          - Validate=true
           - CreateNamespace=true
-          - ApplyOutOfSyncOnly=false
