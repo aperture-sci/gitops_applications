@@ -32,11 +32,11 @@ spec:
         - setWeight: 20
         - pause: {duration: 30}
         - analysis:
-          templates:
-          - templateName: analysis-prometheus
-          args:
-          - name: ingress
-            value: color-preview
+            templates:
+            - templateName: analysis-prometheus
+            args:
+            - name: ingress
+              value: color-preview
         - setWeight: 40
         - pause: {duration: 30}
         - setWeight: 60
