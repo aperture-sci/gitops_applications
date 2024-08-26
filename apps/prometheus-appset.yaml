@@ -33,6 +33,8 @@ spec:
         helm:
           releaseName: prometheus
           values: |
+            server:
+              baseURL: https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
             alertmanager:
               enabled: false
             kube-state-metrics:
