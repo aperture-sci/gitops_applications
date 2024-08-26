@@ -36,6 +36,7 @@ spec:
             server:
               ingress:
                 enabled: true
+                ingressClassName: nginx
                 hosts:
                   - https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
             alertmanager:
