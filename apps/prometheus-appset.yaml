@@ -34,9 +34,10 @@ spec:
           releaseName: prometheus
           values: |
             server:
-              ingress: true
-              hosts:
-                - https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
+              ingress:
+                enabled: true
+                hosts:
+                  - https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
             alertmanager:
               enabled: false
             kube-state-metrics:
