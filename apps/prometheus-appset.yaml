@@ -34,6 +34,7 @@ spec:
           releaseName: prometheus
           values: |
             server:
+              baseURL: https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
               ingress:
                 enabled: true
                 ingressClassName: nginx
