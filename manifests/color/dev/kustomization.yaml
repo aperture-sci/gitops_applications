@@ -6,7 +6,6 @@ resources:
   - ingress.yaml
   - ingress-preview.yaml
   - analysis-prometheus.yaml
-  - prometheus-ingress.yaml
 images:
   - name: docker.io/aperturesci/rollouts-demo
     newTag: '3146458'
