@@ -35,12 +35,11 @@ spec:
           values: |
             server:
               baseURL: https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
-              # ingress:
-              #   enabled: true
-              #   ingressClassName: nginx
-              #   annotations: {}
-              #   hosts:
-              #     - https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
+              ingress:
+                enabled: true
+                ingressClassName: nginx
+                hosts:
+                  - https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
             alertmanager:
               enabled: false
             kube-state-metrics:
