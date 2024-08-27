@@ -20,7 +20,7 @@ spec:
         address: http://prometheus-server.monitoring:9090
         query: >
           sum(
-            rate(nginx_ingress_controller_requests{ingress="{{args.ingress}}",status!~"[4-5].*"}[20s]))
+            rate(nginx_ingress_controller_requests{ingress="{{args.ingress}}",status!~"[4-5].*"}[20s])
             /
-            sum(rate(nginx_ingress_controller_requests{ingress="{{args.ingress}}"}[20s])
+            sum(rate(nginx_ingress_controller_requests{ingress="{{args.ingress}}"}[20s]))
           )
