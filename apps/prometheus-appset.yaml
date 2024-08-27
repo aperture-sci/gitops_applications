@@ -39,7 +39,7 @@ spec:
                 enabled: true
                 ingressClassName: nginx
                 hosts:
-                  - https://prometheus.{{short}}.kubecon.sales-dev.codefresh.io
+                  - prometheus.{{short}}.kubecon.sales-dev.codefresh.io
             alertmanager:
               enabled: false
             kube-state-metrics:
