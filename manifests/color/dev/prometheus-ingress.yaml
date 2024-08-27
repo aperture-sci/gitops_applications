@@ -12,7 +12,7 @@ spec:
     - host: prometheus.dev.kubecon.sales-dev.codefresh.io
       http:
         paths:
-          - path: /prom(/|$)(.*)
+          - path: /prometheus(/|$)(.*)
             backend:
               service:
                 name: prometheus-server
