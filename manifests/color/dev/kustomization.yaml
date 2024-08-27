@@ -9,4 +9,4 @@ resources:
   - prometheus-ingress.yaml
 images:
   - name: docker.io/aperturesci/rollouts-demo
-    newTag: ebf7e92
+    newTag: '3146458'
