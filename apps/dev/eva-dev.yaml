@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/aperture-sci/gitops_applications.git
-    targetRevision: HEAD
+    targetRevision: main
     path: manifests/eva
     helm:
       valueFiles:
