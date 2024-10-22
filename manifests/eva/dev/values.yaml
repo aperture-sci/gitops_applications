@@ -1,12 +1,12 @@
 result:
   image:
-    repository: aperture-sci/result
+    repository: aperturesci/result
     tag: stable
 vote:
   image:
-    repository: aperture-sci/vote
+    repository: aperturesci/vote
     tag: stable
 worker:
   image:
-    repository: aperture-sci/worker
+    repository: aperturesci/worker
     tag: stable
