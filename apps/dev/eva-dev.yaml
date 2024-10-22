@@ -9,10 +9,10 @@ spec:
   source:
     repoURL: https://github.com/aperture-sci/gitops_applications.git
     targetRevision: HEAD
-    path: example-voting-app
+    path: manifests/eva
     helm:
       valueFiles:
-        - manifests/eva/dev/values.yaml
+        - dev/values.yaml
   destination:
     namespace: dev
     server: https://kubernetes.default.svc
