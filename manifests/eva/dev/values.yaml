@@ -9,4 +9,4 @@ vote:
 worker:
   image:
     repository: aperturesci/worker
-    tag: stable
+    tag: 738b8db
