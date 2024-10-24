@@ -5,7 +5,7 @@ result:
 vote:
   image:
     repository: aperturesci/vote
-    tag: 738b8db
+    tag: 985dbb7
 worker:
   image:
     repository: aperturesci/worker
